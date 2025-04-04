@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.wanderingnavigator.entities.Excursion;
 import com.example.wanderingnavigator.entities.Vacation;
 
 import java.util.List;
@@ -24,4 +25,11 @@ public interface VacationDAO {
 
     @Query("SELECT * FROM vacations ORDER BY startDate")
     List<Vacation> getAllVacations();
+
+    @Query("SELECT * FROM vacations WHERE vacationTitle LIKE :searchTerm")
+    List<Vacation> searchVacations(String searchTerm);
+
+    @Query("SELECT * FROM excursion_table WHERE title LIKE :searchTerm")
+    List<Excursion> searchExcursions(String searchTerm);
+
 }

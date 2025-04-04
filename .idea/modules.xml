@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/d424-capstone.iml" filepath="$PROJECT_DIR$/.idea/d424-capstone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Wandering_Navigator.iml" filepath="$PROJECT_DIR$/.idea/modules/Wandering_Navigator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Wandering_Navigator.app.unitTest.iml" />
     </modules>
   </component>
 </project>

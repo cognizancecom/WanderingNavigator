@@ -8,7 +8,8 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "excursion_table")
-public class Excursion {
+
+public class Excursion extends BaseEntity{
     @PrimaryKey(autoGenerate = true)
     private int excursionId;
     private int vacationId;
@@ -62,5 +63,18 @@ public class Excursion {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public boolean validate() {
+        return false;
+    }
+
+    public char[] getCreatedDateStr() {
+        return new char[0];
+    }
+
+    public char[] getModifiedDateStr() {
+        return new char[0];
     }
 }

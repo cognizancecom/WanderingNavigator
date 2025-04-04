@@ -3,9 +3,11 @@ package com.example.wanderingnavigator.entities;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+import androidx.room.ColumnInfo;
+
 
 @Entity(tableName = "vacations")
-public class Vacation {
+public class Vacation extends BaseEntity {
     @PrimaryKey(autoGenerate = true)
     private int vacationId;
     private String vacationTitle;
@@ -16,20 +18,40 @@ public class Vacation {
     // Constructor WITHOUT ID for insertion
     @Ignore
     public Vacation(String vacationTitle, String vacationHotel, String startDate, String endDate) {
+        super();
         this.vacationTitle = vacationTitle;
         this.vacationHotel = vacationHotel;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.createdDateStr = getCreatedDateFormatted();
+        this.modifiedDateStr = getModifiedDateFormatted();
+    }
+
+    private String getModifiedDateFormatted() {
+        return "";
+    }
+
+    private String getCreatedDateFormatted() {
+        return "";
     }
 
     // Constructor WITH ID for updates
     public Vacation(int vacationId, String vacationTitle, String vacationHotel, String startDate, String endDate) {
+        super();
         this.vacationId = vacationId;
         this.vacationTitle = vacationTitle;
         this.vacationHotel = vacationHotel;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.createdDateStr = getCreatedDateFormatted();
+        this.modifiedDateStr = getModifiedDateFormatted();
     }
+
+    @ColumnInfo(name = "created_date")
+    private String createdDateStr;
+
+    @ColumnInfo(name = "modified_date")
+    private String modifiedDateStr;
 
     public String getStartDate() {
         return startDate;
@@ -75,5 +97,25 @@ public class Vacation {
         this.vacationId = vacationId;
     }
 
+    public String getCreatedDateStr() {
+        return createdDateStr;
+    }
 
+    public void setCreatedDateStr(String createdDateStr) {
+        this.createdDateStr = createdDateStr;
+    }
+
+    public String getModifiedDateStr() {
+        return modifiedDateStr;
+    }
+
+    public void setModifiedDateStr(String modifiedDateStr) {
+        this.modifiedDateStr = modifiedDateStr;
+    }
+
+
+    @Override
+    public boolean validate() {
+        return false;
+    }
 }

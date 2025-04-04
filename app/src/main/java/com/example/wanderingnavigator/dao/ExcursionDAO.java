@@ -9,6 +9,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import com.example.wanderingnavigator.entities.Excursion;
+import com.example.wanderingnavigator.entities.Vacation;
 
 import java.util.List;
 
@@ -34,4 +35,11 @@ public interface ExcursionDAO {
 
     @Query("SELECT * FROM excursion_table WHERE vacationId = :excursionId LIMIT 1")
     Excursion getExcursionById(int excursionId);
+
+    @Query("SELECT * FROM vacations WHERE vacationTitle LIKE :searchTerm")
+    List<Vacation> searchVacations(String searchTerm);
+
+    @Query("SELECT * FROM excursion_table WHERE title LIKE :searchTerm")
+    List<Excursion> searchExcursions(String searchTerm);
+
 }

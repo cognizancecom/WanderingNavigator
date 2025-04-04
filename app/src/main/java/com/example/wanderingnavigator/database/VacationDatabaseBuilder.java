@@ -5,6 +5,7 @@ import android.content.Context;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.wanderingnavigator.dao.ExcursionDAO;
@@ -12,10 +13,11 @@ import com.example.wanderingnavigator.dao.VacationDAO;
 import com.example.wanderingnavigator.entities.Excursion;
 import com.example.wanderingnavigator.entities.Vacation;
 
-@Database(entities = {Vacation.class, Excursion.class}, version = 10, exportSchema = false)
+
+@Database(entities = {Vacation.class, Excursion.class}, version = 12, exportSchema = false)
+@TypeConverters({DateConverter.class})
 public abstract class VacationDatabaseBuilder extends RoomDatabase {
     public abstract VacationDAO vacationDAO();
-
     public abstract ExcursionDAO excursionDAO();
 
     private static volatile VacationDatabaseBuilder INSTANCE;
@@ -30,10 +32,7 @@ public abstract class VacationDatabaseBuilder extends RoomDatabase {
                             .build();
                 }
             }
-
         }
         return INSTANCE;
     }
-
-
 }
