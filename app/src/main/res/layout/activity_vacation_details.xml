@@ -11,7 +11,8 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="409dp"
-        android:layout_height="400dp"
+        android:layout_height="470dp"
+        android:padding="40dp"
         android:background="@drawable/sweep_gradient_background"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -127,7 +128,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/excursionrecyclerview"
         android:layout_width="409dp"
-        android:layout_height="370dp"
+        android:layout_height="280dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView"
         />

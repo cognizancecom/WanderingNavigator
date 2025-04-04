@@ -71,6 +71,7 @@ public class VacationList extends AppCompatActivity {
         recyclerView.setAdapter(vacationAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         vacationAdapter.setVacations(allVacations);
+        vacationAdapter.notifyDataSetChanged();
 
     }
 

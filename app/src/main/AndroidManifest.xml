@@ -36,11 +36,13 @@
         android:parentActivityName=".UI.VacationDetails" />
         <activity
             android:name=".UI.SearchActivity"
+            android:parentActivityName=".UI.MainActivity"
             android:label="Search"
             android:exported="false" />
 
         <activity
             android:name=".UI.ReportActivity"
+            android:parentActivityName=".UI.MainActivity"
             android:label="Reports"
             android:exported="false" />
 
