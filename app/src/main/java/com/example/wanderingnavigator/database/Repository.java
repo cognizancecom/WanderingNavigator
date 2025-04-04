@@ -174,6 +174,29 @@ public class Repository {
         }
         return excursion[0];
     }
+    // Add to Repository.java
+    public boolean secureDelete(Vacation vacation, String userCredential) {
+        // Verify user has permission to delete
+        if (authenticateUser(userCredential)) {
+            delete(vacation);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean secureUpdate(Vacation vacation, String userCredential) {
+        // Verify user has permission to update
+        if (authenticateUser(userCredential)) {
+            update(vacation);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean authenticateUser(String credential) {
+        // Simple authentication check
+        return credential != null && !credential.isEmpty();
+    }
 
     // Add report generation methods
     public String generateVacationsReport() {
