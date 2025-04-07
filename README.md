@@ -145,3 +145,4 @@ Click on a vacation to display a detailed view, including its excursions.
 
 ## Version Control
 This project is version controlled using Git and hosted on GitLab
+https://gitlab.com/wgu-gitlab-environment/student-repos/jtill92/d424-software-engineering-capstone.git
